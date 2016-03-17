@@ -4,3 +4,24 @@
   border-radius: 3px;
   border: 4px solid black;
 }
+
+.panel-footer {
+  color: white;
+}
+
+.panel.panel-warning .panel-footer {
+  background: #FFCA00;
+}
+
+.panel.panel-danger .panel-footer {
+  background: #C60000;
+}
+
+.panel.panel-success .panel-footer .badge {
+  background: darkgreen;
+  font-size: 0.8em;
+}
+
+.panel.panel-success .panel-footer {
+  background: #008900;
+}

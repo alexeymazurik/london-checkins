@@ -7,11 +7,11 @@ var gulp = require('gulp'),
     ],
     vendor_js = [
       './bower_components/jquery/dist/jquery.js',
-      './bower_components/bootstrap/dist/js/bootstrap.js',
+      './bower_components/bootstrap/dist/js/bootstrap.js'
     ],
     css_files = [
       './assets/css/*.css'
-    ]
+    ],
     font_files = [
       './bower_components/bootstrap/dist/fonts/*.*'
     ];
