@@ -1,27 +1,61 @@
-.super-class {
-  padding: 20px;
-  background: yellow;
-  border-radius: 3px;
-  border: 4px solid black;
+#map {
+  margin: 0 auto 15px;
+  padding: 0;
+  width: 1000px;
+  height: 700px;
 }
 
-.panel-footer {
-  color: white;
+#floating-panel {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto 10px;
+  padding: 0;
+  width: 100%;
 }
 
-.panel.panel-warning .panel-footer {
-  background: #FFCA00;
+.main-content {
+	position: relative;
 }
 
-.panel.panel-danger .panel-footer {
-  background: #C60000;
+#legend {
+	position: absolute;
+	bottom: 130px;
+	left: 93px;
+	display: inline-block;
+	background: #fff;
+	border-radius: 2px;
+	text-align: left;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	padding: 10px;
+	z-index: 10;
 }
 
-.panel.panel-success .panel-footer .badge {
-  background: darkgreen;
-  font-size: 0.8em;
+#legend ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
-.panel.panel-success .panel-footer {
-  background: #008900;
+#legend ul li {
+	display: flex;
+	align-items: center;
+}
+
+#legend .rectangle {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	margin-right: 5px;
+	border: 1px solid rgba(0,0,0,.3);
+	box-sizing: border-box;
+}
+
+#legend .rectangle.yellow { background: yellow; }
+#legend .rectangle.blue { background: blue; }
+
+
+
+#legend h2 {
+	margin: 10px 0;
+	font-size: 1.4em;
 }

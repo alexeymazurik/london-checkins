@@ -9,6 +9,10 @@ var gulp = require('gulp'),
       './bower_components/jquery/dist/jquery.js',
       './bower_components/bootstrap/dist/js/bootstrap.js'
     ],
+    js_files = [
+      './assets/js/overlay.js',
+	    './assets/js/usgs_overlay.js'
+    ],
     css_files = [
       './assets/css/*.css'
     ],
@@ -19,7 +23,13 @@ var gulp = require('gulp'),
 gulp.task('styles', function(){
   gulp.src(css_files)
     .pipe(concat('styles.css'))
-    .pipe(gulp.dest('./public/css'));
+    .pipe(gulp.dest('public/css'));
+});
+
+gulp.task('scripts', function(){
+  gulp.src(js_files)
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('public/js'));
 });
 
 gulp.task('server', function(){
@@ -33,6 +43,7 @@ gulp.task('server', function(){
 
   gulp.watch("public/*.html").on('change', browserSync.reload);
   gulp.watch(css_files, ['styles']).on('change', browserSync.reload);
+  gulp.watch(js_files, ['scripts']).on('change', browserSync.reload);
 });
 
 gulp.task('vendor-styles', function(){
@@ -51,10 +62,6 @@ gulp.task('fonts', function(){
     .pipe(gulp.dest('./public/fonts'));
 });
 
-gulp.task('watch', function(){
-
-});
-
 gulp.task('clean', function(){
   return del([
     'public/js/**/*',
@@ -63,4 +70,4 @@ gulp.task('clean', function(){
   ]);
 });
 
-gulp.task('default', ['clean', 'styles', 'vendor-styles', 'vendor-scripts', 'fonts']);
+gulp.task('default', ['clean', 'styles', 'vendor-styles', 'scripts', 'vendor-scripts', 'fonts']);

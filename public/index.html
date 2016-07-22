@@ -13,146 +13,44 @@
         <div class="container">
 
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">First App</a>
+            <a class="navbar-brand" href="#">Recommender systems</a>
           </div>
-
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li>
-          </ul>
 
         </div>
       </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="container">
-      <div class="jumbotron">
-        <h1>Hello, world!</h1>
-        <p>Simple text</p>
-        <p>
-          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-            Launch demo modal
-          </button>
-        </p>
-      </div>
+    <div class="container main-content">
 
+      <!--<div id="floating-panel">-->
+        <!--<button onclick="toggleHeatmap()" class="btn btn-default">Toggle Heatmap</button>-->
+        <!--<button onclick="changeGradient()" class="btn btn-default">Change gradient</button>-->
+        <!--<button onclick="changeRadius()" class="btn btn-default">Change radius</button>-->
+        <!--<button onclick="changeOpacity()" class="btn btn-default">Change opacity</button>-->
+      <!--</div>-->
+	    <div id="legend">
+		    <h2>Legend of map</h2>
+		    <ul>
+			    <li>
+				    <div class="rectangle yellow"></div>
+				    <span>High price</span>
+			    </li>
+			    <li>
+				    <div class="rectangle blue"></div>
+				    <span>Low price</span>
+			    </li>
+		    </ul>
+	    </div>
 
-      <div class="row">
-        <div class="col-md-4">
-          <div class="panel panel-warning">
-            <div class="panel-heading"><h4>Package #1</h4></div>
-            <div class="panel-body">
-              <ul class="list-group">
-                <li class="list-group-item">Feature 1</li>
-                <li class="list-group-item">Feature 2</li>
-                <li class="list-group-item">Feature 3</li>
-                <li class="list-group-item">Feature 4</li>
-              </ul>
-            </div>
-            <div class="panel-footer text-center">
-              <h4>$100 <span class="label label-warning">200 Left</span></h4>
-              <button class="btn-warning btn">
-                Buy
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="panel panel-success">
-            <div class="panel-heading"><h4>Package #2</h4></div>
-            <div class="panel-body">
-              <ul class="list-group">
-                <li class="list-group-item">Feature 1</li>
-                <li class="list-group-item">Feature 2</li>
-                <li class="list-group-item">Feature 3</li>
-                <li class="list-group-item">Feature 4</li>
-              </ul>
-            </div>
-            <div class="panel-footer text-center">
-              <h4>
-                $250
-                <span class="label label-success">400 Left</span>
-              </h4>
-              <button class="btn-success btn">
-                Buy
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="panel panel-danger">
-            <div class="panel-heading"><h4>Package #3</h4></div>
-            <div class="panel-body">
-              <ul class="list-group">
-                <li class="list-group-item">Feature 1</li>
-                <li class="list-group-item">Feature 2</li>
-                <li class="list-group-item">Feature 3</li>
-                <li class="list-group-item">Feature 4</li>
-              </ul>
-            </div>
-            <div class="panel-footer text-center">
-              <h4>
-                $1000
-                <span class="label label-danger">400 Left</span>
-              </h4>
-              <button class="btn-danger btn">
-                Buy
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div id="map"></div>
 
       <footer class="well text-center">
-        This site is created by <strong>Incredible Me</strong>!
+        Recommender systems
       </footer>
     </div>
-    <!-- Button trigger modal -->
-
-    <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title">Modal title</h4>
-          </div>
-          <div class="modal-body">
-            <p>One fine body&hellip;</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCAlMN-5rNSyanH3V5YTrmyTIuT3Ry74w&signed_in=true"></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCAlMN-5rNSyanH3V5YTrmyTIuT3Ry74w&signed_in=true&libraries=visualization&callback=initMap"></script>-->
     <script type="text/javascript" src="js/vendor.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
