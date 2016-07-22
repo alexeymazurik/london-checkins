@@ -3,18 +3,20 @@
  */
 
 var map,
-		overlay,
-		bounds;
+		overlay;
+
+//initMap();
+
+google.maps.event.addDomListener(window, 'load', initMap);
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12.3,
+    zoom: 12,
     center: {lat: 51.536606, lng: -0.106358},
-	  initialBounds: {},
-    mapTypeId: google.maps.MapTypeId.SATELITE
+    mapTypeId: google.maps.MapTypeId.MAP
   });
 
-	bounds = new google.maps.LatLngBounds(
+	var bounds = new google.maps.LatLngBounds(
 		new google.maps.LatLng(51.475011752, -0.244845),
 		new google.maps.LatLng(51.5969944965, 0.0338367946017));
 
@@ -98,10 +100,10 @@ USGSOverlay.prototype.draw = function() {
 // [START region_removal]
 // The onRemove() method will be called automatically from the API if
 // we ever set the overlay's map property to 'null'.
-//USGSOverlay.prototype.onRemove = function() {
-//	this.div_.parentNode.removeChild(this.div_);
-//	this.div_ = null;
-//};
+USGSOverlay.prototype.onRemove = function() {
+	this.div_.parentNode.removeChild(this.div_);
+	this.div_ = null;
+};
 // [END region_removal]
 
 google.maps.event.addDomListener(window, 'load', initMap);

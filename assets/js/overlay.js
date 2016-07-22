@@ -3,18 +3,16 @@
  */
 
 var map,
-		overlay,
-		bounds;
+		overlay;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12.3,
+    zoom: 13,
     center: {lat: 51.536606, lng: -0.106358},
-	  initialBounds: {},
-    mapTypeId: google.maps.MapTypeId.SATELITE
+    mapTypeId: google.maps.MapTypeId.MAP
   });
 
-	bounds = new google.maps.LatLngBounds(
+	var bounds = new google.maps.LatLngBounds(
 		new google.maps.LatLng(51.475011752, -0.244845),
 		new google.maps.LatLng(51.5969944965, 0.0338367946017));
 
