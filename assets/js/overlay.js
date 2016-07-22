@@ -17,7 +17,7 @@ function initMap() {
 		new google.maps.LatLng(51.475011752, -0.244845),
 		new google.maps.LatLng(51.5969944965, 0.0338367946017));
 
-	var srcImage = 'http://localhost:3000/true.png';
+	var srcImage = 'true.png';
 
 	overlay = new USGSOverlay(bounds, srcImage, map);
 }
