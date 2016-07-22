@@ -74,10 +74,10 @@ USGSOverlay.prototype.draw = function() {
 // [START region_removal]
 // The onRemove() method will be called automatically from the API if
 // we ever set the overlay's map property to 'null'.
-USGSOverlay.prototype.onRemove = function() {
-	this.div_.parentNode.removeChild(this.div_);
-	this.div_ = null;
-};
+//USGSOverlay.prototype.onRemove = function() {
+//	this.div_.parentNode.removeChild(this.div_);
+//	this.div_ = null;
+//};
 // [END region_removal]
 
 google.maps.event.addDomListener(window, 'load', initMap);

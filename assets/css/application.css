@@ -1,8 +1,10 @@
 #map {
   margin: 0 auto 15px;
   padding: 0;
-  width: 1000px;
+  width: 998px;
   height: 700px;
+	display: block;
+	position: relative;
 }
 
 #floating-panel {
