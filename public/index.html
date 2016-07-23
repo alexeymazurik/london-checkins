@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>First App</title>
+    <title>Recommender App</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
   </head>
@@ -13,7 +13,7 @@
         <div class="container">
 
           <div class="navbar-header">
-            <a class="navbar-brand" href="#">Recommender systems</a>
+            <a class="navbar-brand" href="#">London Real Estate Market</a>
           </div>
 
         </div>
@@ -22,30 +22,78 @@
 
     <div class="container main-content">
 
-      <!--<div id="floating-panel">-->
-        <!--<button onclick="toggleHeatmap()" class="btn btn-default">Toggle Heatmap</button>-->
-        <!--<button onclick="changeGradient()" class="btn btn-default">Change gradient</button>-->
-        <!--<button onclick="changeRadius()" class="btn btn-default">Change radius</button>-->
-        <!--<button onclick="changeOpacity()" class="btn btn-default">Change opacity</button>-->
-      <!--</div>-->
-	    <div id="legend">
-		    <h2>Legend of map</h2>
-		    <ul>
-			    <li>
-				    <div class="rectangle yellow"></div>
-				    <span>High price</span>
-			    </li>
-			    <li>
-				    <div class="rectangle blue"></div>
-				    <span>Low price</span>
-			    </li>
-		    </ul>
+      <div id="floating-panel">
+        <button onclick="setNewOverlay('true_label.png', '.legend-prices', '.legend-errors, .legend-predicted-prices')" class="btn btn-default">Ground Truth</button>
+	      <button onclick="setNewOverlay('predicted_label.png', '.legend-predicted-prices', '.legend-errors, .legend-prices')" class="btn btn-default">Predicted</button>
+	      <button onclick="setNewOverlay('errorx3.png', '.legend-errors', '.legend-prices, .legend-predicted-prices')" class="btn btn-default">Errors</button>
+	      <button onclick="setNewOverlay('chekins.png', '.legend-checkins', '.legend-errors, .legend-prices, .legend-predicted-prices')" class="btn btn-default">Checkins</button>
+      </div>
+	    <div class="legend legend-errors hidden">
+				<h2>Errors</h2>
+		    <div class="row">
+			    <div class="col-md-2">
+				    <div class="rectangle smaller"></div>
+			    </div>
+			    <div class="col-md-8">
+				    <ul>
+					    <li>3+ classes</li>
+					    <li>2 classes</li>
+					    <li>1 class</li>
+					    <li>0 class</li>
+				    </ul>
+			    </div>
+		    </div>
+	    </div>
+	    <div class="legend legend-prices">
+		    <h2>Prices</h2>
+		    <div class="row">
+			    <div class="col-md-2">
+				    <div class="rectangle"></div>
+			    </div>
+			    <div class="col-md-10">
+				    <ul>
+					    <li>£881250 <</li>
+					    <li>£640000 - £881250</li>
+					    <li>£524950 - £640000</li>
+					    <li>£446000 - £524950</li>
+					    <li>£392000 - £446000</li>
+					    <li>£350000 - £392000</li>
+					    <li>£315000 - £350000</li>
+					    <li>£270000 - £315000</li>
+					    <li>£240000 - £270000</li>
+					    <li class="text-right">< £240000</li>
+				    </ul>
+			    </div>
+		    </div>
+	    </div>
+
+	    <div class="legend legend-predicted-prices">
+		    <h2>Predicted prices</h2>
+		    <div class="row">
+			    <div class="col-md-2">
+				    <div class="rectangle"></div>
+			    </div>
+			    <div class="col-md-10">
+				    <ul>
+					    <li>£881250 <</li>
+					    <li>£640000 - £881250</li>
+					    <li>£524950 - £640000</li>
+					    <li>£446000 - £524950</li>
+					    <li>£392000 - £446000</li>
+					    <li>£350000 - £392000</li>
+					    <li>£315000 - £350000</li>
+					    <li>£270000 - £315000</li>
+					    <li>£240000 - £270000</li>
+					    <li class="text-right">< £240000</li>
+				    </ul>
+			    </div>
+		    </div>
 	    </div>
 
       <div id="map"></div>
 
       <footer class="well text-center">
-        Recommender systems
+	      Analysis of Real Estate Market through the lenses of Geo-tagged Social Media Data
       </footer>
     </div>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCAlMN-5rNSyanH3V5YTrmyTIuT3Ry74w

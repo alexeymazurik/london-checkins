@@ -19,7 +19,7 @@
 	position: relative;
 }
 
-#legend {
+.legend {
 	position: absolute;
 	bottom: 130px;
 	left: 93px;
@@ -32,32 +32,40 @@
 	z-index: 10;
 }
 
-#legend ul {
+.legend ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-#legend ul li {
-	display: flex;
-	align-items: center;
+.legend-prices ul li:last-child, .legend-predicted-prices ul li:last-child {
+	padding-right: 15px;
 }
 
-#legend .rectangle {
+.legend .rectangle {
 	display: inline-block;
 	width: 15px;
-	height: 15px;
+	height: 190px;
 	margin-right: 5px;
 	border: 1px solid rgba(0,0,0,.3);
+	background: #ffff00; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffff00 0%, #3239ff 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #ffff00 0%,#3239ff 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #ffff00 0%,#3239ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff00', endColorstr='#3239ff',GradientType=0 );
 	box-sizing: border-box;
 }
 
-#legend .rectangle.yellow { background: yellow; }
-#legend .rectangle.blue { background: blue; }
+.legend .rectangle.smaller {
+	height: 75px;
+}
+
+/*.legend .rectangle.yellow { background: yellow; }*/
+/*.legend .rectangle.blue { background: blue; }*/
 
 
 
-#legend h2 {
+.legend h2 {
 	margin: 10px 0;
 	font-size: 1.4em;
 }

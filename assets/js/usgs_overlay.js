@@ -35,8 +35,8 @@ USGSOverlay.prototype.onAdd = function() {
 	img.style.width = '100%';
 	img.style.height = '100%';
 	img.style.position = 'absolute';
-	img.style.imageRendering = '-webkit-optimize-contrast';
-	img.style.imageRendering = 'crisp-edges';
+	//img.style.imageRendering = '-webkit-optimize-contrast';
+	img.style.imageRendering = 'pixelated';
 	img.style.opacity = '0.5';
 	div.appendChild(img);
 
@@ -74,10 +74,10 @@ USGSOverlay.prototype.draw = function() {
 // [START region_removal]
 // The onRemove() method will be called automatically from the API if
 // we ever set the overlay's map property to 'null'.
-//USGSOverlay.prototype.onRemove = function() {
-//	this.div_.parentNode.removeChild(this.div_);
-//	this.div_ = null;
-//};
+USGSOverlay.prototype.onRemove = function() {
+	this.div_.parentNode.removeChild(this.div_);
+	this.div_ = null;
+};
 // [END region_removal]
 
 google.maps.event.addDomListener(window, 'load', initMap);
